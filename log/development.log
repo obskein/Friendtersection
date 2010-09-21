@@ -1,0 +1,229 @@
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-09-21 21:27:16) [GET]
+Rendering welcome/index
+
+ActionView::TemplateError (welcome_url failed to generate from {:action=>"show", :controller=>"welcome"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["welcome", :id] - are they all satisfied?) on line #4 of app/views/welcome/index.html.haml:
+1: %h1
+2:   Friendtersection
+3: 
+4: = link_to welcome_path, welcome_path, :method => :post
+
+    (eval):17:in `welcome_path'
+    app/views/welcome/index.html.haml:4:in `_run_haml_app47views47welcome47index46html46haml'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (48.5ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-09-21 21:27:39) [GET]
+Rendering welcome/index
+
+ActionView::TemplateError (welcome_url failed to generate from {:action=>"show", :controller=>"welcome"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["welcome", :id] - are they all satisfied?) on line #4 of app/views/welcome/index.html.haml:
+1: %h1
+2:   Friendtersection
+3: 
+4: = link_to welcome_path, welcome_path, :method => :post
+
+    (eval):17:in `welcome_path'
+    app/views/welcome/index.html.haml:4:in `_run_haml_app47views47welcome47index46html46haml'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (124.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-09-21 21:27:59) [GET]
+Rendering welcome/index
+
+ActionView::TemplateError (welcome_url failed to generate from {:action=>"show", :controller=>"welcome"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["welcome", :id] - are they all satisfied?) on line #4 of app/views/welcome/index.html.haml:
+1: %h1
+2:   Friendtersection
+3: 
+4: = link_to welcome_path, welcomes_path, :method => :post
+
+    (eval):17:in `welcome_path'
+    app/views/welcome/index.html.haml:4:in `_run_haml_app47views47welcome47index46html46haml'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (56.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-09-21 21:28:08) [GET]
+Rendering welcome/index
+
+ActionView::TemplateError (undefined local variable or method `welcomes_path' for #<ActionView::Base:0x24d2658>) on line #4 of app/views/welcome/index.html.haml:
+1: %h1
+2:   Friendtersection
+3: 
+4: = link_to welcomes_path, welcomes_path, :method => :post
+
+    app/views/welcome/index.html.haml:4:in `_run_haml_app47views47welcome47index46html46haml'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (44.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-09-21 21:28:17) [GET]
+Rendering welcome/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#create (for 127.0.0.1 at 2010-09-21 21:28:28) [POST]
+  Parameters: {"authenticity_token"=>"VM7gMIoiXcUoD3eiVDZCZvhtSnC/bSthrgt7DB7g5io="}
+
+RuntimeError (pow):
+  app/controllers/welcome_controller.rb:6:in `create'
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (35.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#create (for 127.0.0.1 at 2010-09-21 21:28:47) [POST]
+  Parameters: {"authenticity_token"=>"VM7gMIoiXcUoD3eiVDZCZvhtSnC/bSthrgt7DB7g5io="}
+
+RuntimeError (pow):
+  app/controllers/welcome_controller.rb:6:in `create'
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (101.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#create (for 127.0.0.1 at 2010-09-21 21:28:58) [POST]
+  Parameters: {"authenticity_token"=>"VM7gMIoiXcUoD3eiVDZCZvhtSnC/bSthrgt7DB7g5io="}
+
+NameError (uninitialized constant WelcomeController::OAuth2):
+  app/controllers/welcome_controller.rb:7:in `create'
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (37.4ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#create (for 127.0.0.1 at 2010-09-21 21:29:05) [POST]
+  Parameters: {"authenticity_token"=>"VM7gMIoiXcUoD3eiVDZCZvhtSnC/bSthrgt7DB7g5io="}
+
+NameError (uninitialized constant WelcomeController::OAuth2):
+  app/controllers/welcome_controller.rb:8:in `create'
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (28.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#create (for 127.0.0.1 at 2010-09-21 21:29:17) [POST]
+  Parameters: {"authenticity_token"=>"VM7gMIoiXcUoD3eiVDZCZvhtSnC/bSthrgt7DB7g5io="}
+
+NameError (uninitialized constant WelcomeController::OAuth2):
+  app/controllers/welcome_controller.rb:7:in `create'
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (31.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#create (for 127.0.0.1 at 2010-09-21 21:29:21) [POST]
+  Parameters: {"authenticity_token"=>"VM7gMIoiXcUoD3eiVDZCZvhtSnC/bSthrgt7DB7g5io="}
+
+NameError (uninitialized constant WelcomeController::OAuth2):
+  app/controllers/welcome_controller.rb:7:in `create'
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (31.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#create (for 127.0.0.1 at 2010-09-21 21:29:32) [POST]
+  Parameters: {"authenticity_token"=>"VM7gMIoiXcUoD3eiVDZCZvhtSnC/bSthrgt7DB7g5io="}
+
+TypeError (exception class/object expected):
+  app/controllers/welcome_controller.rb:7:in `raise'
+  app/controllers/welcome_controller.rb:7:in `create'
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (40.9ms)
+Rendered rescues/_request_and_response (6.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#create (for 127.0.0.1 at 2010-09-21 21:30:13) [POST]
+  Parameters: {"authenticity_token"=>"VM7gMIoiXcUoD3eiVDZCZvhtSnC/bSthrgt7DB7g5io="}
+
+RuntimeError (#<OAuth2::Client:0x2236afc @json=nil, @site="https://graph.facebook.com", @connection=#<Faraday::Connection:0x2236ad4 @port=nil, @ssl={}, @scheme="https", @path_prefix="/", @host="graph.facebook.com", @options={}, @headers={}, @params={}, @builder=#<Faraday::Builder:0x2236a20 @handlers=[]>, @parallel_manager=nil>, @options={}, @secret="f2579fe22c480eaf339a0039dd5f4e0e", @id="157960757563750">):
+  app/controllers/welcome_controller.rb:11:in `create'
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (113.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#create (for 127.0.0.1 at 2010-09-21 21:42:12) [POST]
+  Parameters: {"authenticity_token"=>"VM7gMIoiXcUoD3eiVDZCZvhtSnC/bSthrgt7DB7g5io="}
+
+RuntimeError (#<OAuth2::Client:0x26e1368 @json=nil, @site="https://graph.facebook.com", @connection=#<Faraday::Connection:0x26e1340 @port=nil, @ssl={}, @scheme="https", @path_prefix="/", @host="graph.facebook.com", @options={}, @headers={}, @params={}, @builder=#<Faraday::Builder:0x26e11b0 @handlers=[]>, @parallel_manager=nil>, @options={}, @secret="f2579fe22c480eaf339a0039dd5f4e0e", @id="157960757563750">):
+  app/controllers/welcome_controller.rb:13:in `create'
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (31.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#create (for 127.0.0.1 at 2010-09-21 21:42:24) [POST]
+  Parameters: {"authenticity_token"=>"VM7gMIoiXcUoD3eiVDZCZvhtSnC/bSthrgt7DB7g5io="}
+
+TypeError (exception class/object expected):
+  app/controllers/welcome_controller.rb:13:in `raise'
+  app/controllers/welcome_controller.rb:13:in `create'
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#create (for 127.0.0.1 at 2010-09-21 21:42:29) [POST]
+  Parameters: {"authenticity_token"=>"VM7gMIoiXcUoD3eiVDZCZvhtSnC/bSthrgt7DB7g5io="}
+
+RuntimeError (#<OAuth2::Strategy::WebServer:0x24c2758 @client=#<OAuth2::Client:0x24c276c @json=nil, @site="https://graph.facebook.com", @connection=#<Faraday::Connection:0x24c2744 @port=nil, @ssl={}, @scheme="https", @path_prefix="/", @host="graph.facebook.com", @options={}, @headers={}, @params={}, @builder=#<Faraday::Builder:0x24c2690 @handlers=[]>, @parallel_manager=nil>, @options={}, @secret="f2579fe22c480eaf339a0039dd5f4e0e", @id="157960757563750">>):
+  app/controllers/welcome_controller.rb:13:in `create'
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendered rescues/_trace (101.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#create (for 127.0.0.1 at 2010-09-21 21:43:51) [POST]
+  Parameters: {"authenticity_token"=>"VM7gMIoiXcUoD3eiVDZCZvhtSnC/bSthrgt7DB7g5io="}
+
+ActionView::MissingTemplate (Missing template welcome/create.erb in view path app/views):
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WelcomeController#create (for 127.0.0.1 at 2010-09-21 21:44:05) [POST]
+  Parameters: {"authenticity_token"=>"VM7gMIoiXcUoD3eiVDZCZvhtSnC/bSthrgt7DB7g5io="}
+Redirected to https://graph.facebook.com/oauth/authorize?client_id=157960757563750&type=web_server&redirect_uri=http%3A%2F%2F1000d6.com%2Ffb
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/welcome]
