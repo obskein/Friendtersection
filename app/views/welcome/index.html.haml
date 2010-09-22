@@ -1,4 +1,61 @@
-%h1
-  Friendtersection
+.container_12
+  .grid_4
+    %h1 Friendtersection
 
-= link_to welcomes_path, welcomes_path, :method => :post
+  .grid_4
+    - if logged_in?
+      %p You are logged in
+      %p Special codes enabled
+  .grid_4
+    - if logged_in?
+      = button_to "Logout", login_path, :method => "delete"
+    - else
+      = button_to "Login to facebook and enable special codez", login_path, :method => :post
+
+.clear
+.container_12
+  - if @user
+    %dl.grid_8
+      %dt User:
+      %dd= @user.inspect
+
+  - if @friend_id
+    %dl.grid_4
+      %dt Friend ID:
+      %dd= @friend_id.inspect
+
+.container_12
+  - if @likes
+    %dl
+      %dt Likes
+      %dd= render_likes @likes
+
+  - if @random_likes
+    %dl.grid_6
+      %dt My likes are pretty junk. Here are some random ones.
+      %dd= render_likes @random_likes
+
+  - if @friends_likes
+    %dl.grid_6
+      %dt Friends likes
+      %dd= render_likes @friends_likes
+
+.container_12
+  .grid_3
+    &nbsp;
+  - if @intersection
+    %dl.grid_9
+      %dt Intersection
+      %dd= render_likes @friends_likes
+
+  - if @friend
+    %dl
+      %dt Selected Friend:
+      %dd= @friend.inspect
+
+- if @friends
+  .clear
+  .container_12
+    %h2 Friends:
+    - @friends.each do |friend|
+      %span.grid_3= link_to friend["name"], :friend_id => friend["id"]
