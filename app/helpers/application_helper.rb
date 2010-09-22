@@ -12,4 +12,14 @@ module ApplicationHelper
       }
     end
   end
+
+  def render_user user
+    content_tag :dl do
+      user.keys.map { |key|
+        content_tag( :dt, key.to_s.humanize ) + 
+          content_tag( :dd, h(user[key]) )
+
+      }
+    end
+  end
 end
