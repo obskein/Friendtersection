@@ -1,2 +1,4 @@
 rails -v=2.3.8
+haml
 formtastic -v=0.9.1 --source rubygems.org
+oauth2
