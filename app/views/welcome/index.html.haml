@@ -42,7 +42,7 @@
 .container_12
   .grid_3
     &nbsp;
-  - if @intersection
+  - if @intersection && @intersection.any?
     %dl.grid_9
       %dt Ah! You both like:
       %dd= render_likes @intersection
