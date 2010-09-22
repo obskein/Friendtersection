@@ -8,7 +8,8 @@
     = stylesheet_link_tag "http://www.spry-soft.com/grids/grid.css?column_width=60&column_amount=12&gutter_width=20"
     %style
       :sass
-        .clearfix { clear:both; }
+        .clearfix 
+          :clear both
   %body
     .container_12
       = yield
