@@ -7,24 +7,34 @@ class ApplicationController < ActionController::Base
 
   helper_method :logged_in?
 
+  private
+
+  # Oauth token retrieval
   def token(redirect_target = default_callback)
     client.web_server.get_access_token(app_session_key, :redirect_uri => redirect_target)
   end
 
+  # Facebook entry point
   def default_callback 
     "http://strong-water-21.heroku.com/"
+  end
+
+  # Security system
+  # TODO :: Considere writing or utilising a proper user recoginition/
+  # management/security system, anything at all because this is fast and dirty.
+
+  def client
+    OAuth2::Client.new('157960757563750', 'f2579fe22c480eaf339a0039dd5f4e0e', :site => 'https://graph.facebook.com')
   end
 
   def logged_in?
     session[:app_session]
   end
 
+  # Pick up returning facebook calls
+  # Consider this 'logged in and authorised'
   def detect_fb_code_callback
    set_app_session params[:code]
-  end
-
-  def client
-    OAuth2::Client.new('157960757563750', 'f2579fe22c480eaf339a0039dd5f4e0e', :site => 'https://graph.facebook.com')
   end
 
   def set_app_session key

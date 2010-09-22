@@ -17,7 +17,7 @@
   - if @user
     %dl.grid_8
       %dt User:
-      %dd= @user.inspect
+      %dd= render_user @user
 
   - if @likes
     %dl.grid_4
@@ -30,14 +30,12 @@
       %dt Friend ID:
       %dd= @friend_id.inspect
       %dt Friend:
-      %dd= @friend.inspect
+      %dd= render_user @friend
 
   - if @friends_likes
     %dl.grid_4
       %dt Friends likes:
       %dd= render_likes @friends_likes
-
-
 
 .container_12
   .grid_3
