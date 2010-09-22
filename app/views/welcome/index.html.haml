@@ -10,7 +10,7 @@
     - if logged_in?
       = button_to "Logout", login_path, :method => "delete"
     - else
-      = button_to "Login to facebook and enable special codez", login_path, :method => :post
+      = button_to "Yes! I want to enable special facebook codez ", login_path, :method => :post
 
 .clear
 .container_12
@@ -19,39 +19,34 @@
       %dt User:
       %dd= @user.inspect
 
-  - if @friend_id
-    %dl.grid_4
-      %dt Friend ID:
-      %dd= @friend_id.inspect
-
-.container_12
   - if @likes
-    %dl
-      %dt Likes
+    %dl.grid_4
+      %dt Likes:
       %dd= render_likes @likes
 
-  - if @random_likes
-    %dl.grid_6
-      %dt My likes are pretty junk. Here are some random ones.
-      %dd= render_likes @random_likes
+.container_12
+  - if @friend
+    %dl.grid_8
+      %dt Friend ID:
+      %dd= @friend_id.inspect
+      %dt Friend:
+      %dd= @friend.inspect
 
   - if @friends_likes
-    %dl.grid_6
-      %dt Friends likes
+    %dl.grid_4
+      %dt Friends likes:
       %dd= render_likes @friends_likes
+
+
 
 .container_12
   .grid_3
     &nbsp;
   - if @intersection
     %dl.grid_9
-      %dt Intersection
-      %dd= render_likes @friends_likes
-
-  - if @friend
-    %dl
-      %dt Selected Friend:
-      %dd= @friend.inspect
+      %dt Ah! You both like:
+      %dd= render_likes @intersection
+      %dd intersection of your likes and your friends likes
 
 - if @friends
   .clear

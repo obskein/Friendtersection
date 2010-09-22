@@ -4,23 +4,39 @@ class WelcomeController < ApplicationController
   before_filter :detect_fb_code_callback, :only => :index
 
   def index
+    @friend_id = params[:friend_id]
     if logged_in?
 
-      @user = JSON.parse(token.get('/me'))
-      @likes = JSON.parse(token.get('/me/likes') || {})["data"]
-      @friends = JSON.parse(token.get('/me/friends') || {})["data"]
+      @user = facebook_data_about '/me'
+      @likes = facebook_data_about '/me/likes', :as => "data"
+      @friends = facebook_data_about '/me/friends', :as => "data"
 
 
-      if params[:friend_id]
+      if @friend_id
         @friend_id = params[:friend_id]
-        @friends_likes = JSON.parse(token.get("/#{@friend_id}/likes") || {})["data"] if @friend_id
+        @friend = facebook_data_about "/#{@friend_id}"
+        @friends_likes = facebook_data_about "/#{@friend_id}/likes", :as => "data"
       end
 
       if @friends_likes
-        @random_likes = (0..rand(5)).to_a.map { @friends_likes.rand }
-        @intersection = @likes & @friends_likes
+        @intersection = intersection(@likes, @friends_likes)
       end
 
     end
+  end
+
+  private
+
+  def facebook_data_about(item, keys = {})
+    res = JSON.parse(token.get(item) || {})
+    keys[:as] ? res[keys[:as]] : res
+  end
+
+  def intersection left, right
+    right.inject([]) { |intersect, r|
+      matches = left.select { |l| l["id"] == r["id"] }
+      intersect.push(matches.first) if matches.any?
+      intersect
+    }
   end
 end

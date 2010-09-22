@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def default_callback 
-    "http://1000d6.com:3001/welcome"
+    "http://1000d6.com:3000/welcome"
   end
 
   def logged_in?
