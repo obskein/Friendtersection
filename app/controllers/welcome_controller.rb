@@ -6,8 +6,8 @@ class WelcomeController < ApplicationController
   # TODO :: Consider doing less at once or fragment 
   # caching to avoid unecessary API calls
   def index
-    @friend_id = params[:friend_id]
     if logged_in?
+      @friend_id = params[:friend_id]
 
       @user = facebook_data_about '/me'
       @likes = facebook_data_about '/me/likes', :as => "data"
@@ -22,7 +22,6 @@ class WelcomeController < ApplicationController
       if @friends_likes
         @intersection = intersection_of(@likes, @friends_likes)
       end
-
     end
   end
 
@@ -33,9 +32,10 @@ class WelcomeController < ApplicationController
   # TODO :: cache token.get requests
   def facebook_data_about(item, keys = {})
     begin
-      res = JSON.parse(token.get(item) || {})
+      res = JSON.parse(token_get(item) || {})
       keys[:as] ? res[keys[:as]] : res
-    rescue OAuth2::HTTPError, EOFError => e
+    rescue SocketError, Errno::ECONNRESET, OAuth2::HTTPError, EOFError => e
+      # TODO :: hoptoad
       nil
     end
   end

@@ -8,7 +8,7 @@
       %p Special codes enabled
   .grid_4.omega
     - if logged_in?
-      = button_to "Logout", login_path, :method => "delete"
+      = button_to "Logout", login_path, :method => :delete
     - else
       = button_to "Yes! I want to enable special facebook codez ", login_path, :method => :post
 

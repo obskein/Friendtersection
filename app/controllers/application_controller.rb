@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
     client.web_server.get_access_token(app_session_key, :redirect_uri => redirect_target)
   end
 
+  def token_get(path)
+    token.get(path)
+  end
+
   # Facebook entry point
   def default_callback 
     "http://strong-water-21.heroku.com/"
