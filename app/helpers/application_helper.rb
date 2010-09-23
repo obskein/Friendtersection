@@ -17,7 +17,7 @@ module ApplicationHelper
     content_tag :dl do
       user.keys.sort.map { |key|
         value = h(user[key])
-        value = Time.parse(value) if key =~ /time/
+        value = Time.parse(value).to_s(:long) if key =~ /time/
         content_tag( :dt, key.to_s.humanize ) + 
           content_tag( :dd, value ) }
     end
