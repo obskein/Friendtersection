@@ -13,7 +13,7 @@ GEM
     activesupport (2.3.8)
     addressable (2.2.1)
     cgi_multipart_eof_fix (2.5.0)
-    daemons (1.0.10)
+    daemons (1.1.0)
     faraday (0.4.6)
       addressable (>= 2.1.1)
       rack (>= 1.0.1)
@@ -51,6 +51,5 @@ DEPENDENCIES
   haml
   mongrel (= 1.1.5)
   oauth2 (= 0.0.13)
-  rack (= 1.1.0)
   rails (= 2.3.8)
   rspec
