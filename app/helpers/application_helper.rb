@@ -15,11 +15,9 @@ module ApplicationHelper
 
   def render_user user
     content_tag :dl do
-      user.keys.map { |key|
+      user.keys.sort.map { |key|
         content_tag( :dt, key.to_s.humanize ) + 
-          content_tag( :dd, h(user[key]) )
-
-      }
+          content_tag( :dd, h(user[key]) ) }
     end
   end
 end

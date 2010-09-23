@@ -35,7 +35,7 @@ class WelcomeController < ApplicationController
     begin
       res = JSON.parse(token.get(item) || {})
       keys[:as] ? res[keys[:as]] : res
-    rescue EOFError => e
+    rescue OAuth2::HTTPError, EOFError => e
       nil
     end
   end
