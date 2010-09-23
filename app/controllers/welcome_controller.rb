@@ -32,7 +32,7 @@ class WelcomeController < ApplicationController
   # TODO :: cache token.get requests
   def facebook_data_about(item, keys = {})
     begin
-      res = JSON.parse(token_get(item) || {})
+      res = JSON.parse(token_get(item) || "{}") 
       keys[:as] ? res[keys[:as]] : res
     rescue SocketError, Errno::ECONNRESET, OAuth2::HTTPError, EOFError => e
       # TODO :: hoptoad

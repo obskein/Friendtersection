@@ -31,6 +31,7 @@ describe ApplicationController do
     end
 
     it 'can make a get request using the token' do
+      return pending '- I have disabled this method as too many fb calls seemed to make FB stop communicating'
       lambda { 
         controller.send :token_get, "foo"
       }.should raise_exception(OAuth2::HTTPError)
