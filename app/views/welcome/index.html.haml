@@ -13,11 +13,9 @@
       = button_to "Yes! I want to enable special facebook codez ", login_path, :method => :post
 
 
-.container_12
-  .grid_3.alpha
-    &nbsp;
-  - if @intersection && @intersection.any?
-    %dl.grid_9.omega
+- if @intersection && @intersection.any?
+  .container_12
+    %dl.grid_12
       %dt Ah! You both like:
       %dd= render_likes @intersection
       %dd intersection of your likes and your friends likes
