@@ -1,12 +1,12 @@
 .container_12
-  .grid_4
+  .grid_4.alpha
     %h1 Friendtersection
 
   .grid_4
     - if logged_in?
       %p You are logged in
       %p Special codes enabled
-  .grid_4
+  .grid_4.omega
     - if logged_in?
       = button_to "Logout", login_path, :method => "delete"
     - else
@@ -15,30 +15,30 @@
 .clear
 
 .container_12
-  .grid_3
+  .grid_3.alpha
     &nbsp;
   - if @intersection && @intersection.any?
-    %dl.grid_9
+    %dl.grid_9.omega
       %dt Ah! You both like:
       %dd= render_likes @intersection
       %dd intersection of your likes and your friends likes
 
 .container_12
   - if @user
-    .grid_8
+    .grid_8.alpha
       %dl
         %dt User:
         %dd= render_user @user
 
   - if @likes
-    .grid_4
+    .grid_4.omega
       %dl
         %dt Likes:
         %dd= render_likes @likes
 
 .container_12
   - if @friend
-    .grid_8
+    .grid_8.alpha
       %dl
         %dt Friend ID:
         %dd= @friend_id.inspect
@@ -46,7 +46,7 @@
         %dd= render_user @friend
 
   - if @friends_likes
-    .grid_4
+    .grid_4.omega
       %dl
         %dt Friends likes:
         %dd= render_likes @friends_likes
