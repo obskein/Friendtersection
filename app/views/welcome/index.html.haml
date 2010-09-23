@@ -25,27 +25,31 @@
 
 .container_12
   - if @user
-    %dl.grid_8
-      %dt User:
-      %dd= render_user @user
+    .grid_8
+      %dl
+        %dt User:
+        %dd= render_user @user
 
   - if @likes
-    %dl.grid_4
-      %dt Likes:
-      %dd= render_likes @likes
+    .grid_4
+      %dl
+        %dt Likes:
+        %dd= render_likes @likes
 
 .container_12
   - if @friend
-    %dl.grid_8
-      %dt Friend ID:
-      %dd= @friend_id.inspect
-      %dt Friend:
-      %dd= render_user @friend
+    .grid_8
+      %dl
+        %dt Friend ID:
+        %dd= @friend_id.inspect
+        %dt Friend:
+        %dd= render_user @friend
 
   - if @friends_likes
-    %dl.grid_4
-      %dt Friends likes:
-      %dd= render_likes @friends_likes
+    .grid_4
+      %dl
+        %dt Friends likes:
+        %dd= render_likes @friends_likes
 
 - if @friends
   .clear
