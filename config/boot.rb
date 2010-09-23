@@ -105,8 +105,6 @@ module Rails
   end
 end
 
-# All that for this:
-Rails.boot!
 
 class Rails::Boot
   def run
@@ -122,3 +120,5 @@ class Rails::Boot
   end
 end
 
+# All that for this:
+Rails.boot!
