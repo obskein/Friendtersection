@@ -16,8 +16,10 @@ module ApplicationHelper
   def render_user user
     content_tag :dl do
       user.keys.sort.map { |key|
+        value = h(user[key])
+        value = Time.parse(value) if key =~ /time/
         content_tag( :dt, key.to_s.humanize ) + 
-          content_tag( :dd, h(user[key]) ) }
+          content_tag( :dd, value ) }
     end
   end
 end
