@@ -15,7 +15,13 @@ class ApplicationController < ActionController::Base
   end
 
   def token_get(path)
-    token.get(path)
+    # This code is disabled for automatic tests, as over use 
+    # eg (autospec, autotest, ci servers, whatever)
+    # will cause facebook to simply stop responding to me for ten minutes.
+    # I consider that sufficiently dangerous to not even try in the test env.
+    unless Rails.env == "test"
+      token.get(path)
+    end
   end
 
   # Facebook entry point
