@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
   # management/security system, anything at all because this is fast and dirty.
 
   def client
-    OAuth2::Client.new('157960757563750', 'f2579fe22c480eaf339a0039dd5f4e0e', :site => 'https://graph.facebook.com')
+    OAuth2::Client.new(ENV['FB_APP_ID'], ENV['FB_APP_SECRET'], :site => 'https://graph.facebook.com')
   end
 
   def logged_in?
